@@ -1,0 +1,228 @@
+
+Medidad antropométricas:
+	
+	Lista únicamente los valores de las entidades clínicas relacionadas con el peso, altura e índice de masa corporal de la paciente, sin parafrasear, en idioma español y en forma de diccionario de python.
+	
+	 {
+		"TAS": 02,
+		"TAD": 74,
+		"TAM": 88,
+		"FC": 81,
+		"FR": 20,
+		"TEMP": 36.2,
+		"SAT": 98,
+		"PESO": 84.6,
+		"TALLA": 1.63,
+		"IMC": 31.8,
+		"INDICE DE CHOQUE": 0.7
+	}
+
+Comorbilidades
+
+	Lista únicamente los valores de las entidades clínicas descritas sobre la paciente, sin parafrasear, en idioma español y en forma de diccionario de python.
+
+	{
+		"TAS": "02",
+		"TAD": "74",
+		"TAM": "88",
+		"FC": "81",
+		"FR": "20",
+		"TEMP": "36.2",
+		"SAT": "98",
+		"PESO": "84.6",
+		"TALLA": "1.63",
+		"IMC": "31.8",
+		"INDICE DE CHOQUE": "0.7",
+		"FEMENINO": "Femenino",
+		"EDAD": "28 años",
+		"SALIDA DE LIQUIDO TRANSVAGINAL": "Salida de líquido trasvaginal sin utilizar toalla sanitaria durante el trayecto",
+		"DISMINUCIÓN DE MOVIMENTOS FETALES": "Disminución de movimientos fetales a razón de 1 movimiento cada hora",
+		"SINTOMAS URINARIOS": "Niega síntomas urinarios",
+		"SINTOMAS RESPIRATORIOS": "Niega síntomas respiratorios",
+		"DATOS DE VASEOESPASMO": "Niega datos de vasoespasmo",
+		"SALIDA DE TAPÓN DE MOCO CON SANGRE": "Salida de tapón de moco con sangre",
+		"APNP": {
+			"Gpo sang": "Gpo sang A Rh positivo",
+			"Rh": "positivo",
+			"Applico COVID 2 dosis y TdPa": "Dosis y TdPa"
+		},
+		"APP": {
+			"Alergias": "Alergías",
+			"Quirúrgicos": "Quirúrgicos",
+			"Crónico degenerativos": "Cronico degenerativos",
+			"Traumáticos": "Traumaticos",
+			"Transfusionales": "Transfusionales"
+		},
+		"INTERROGADOS Y NEGADOS": {
+			"Tabaquismo": "Tabaquismo",
+			"Alcoholismo": "Alcoholismo",
+			"Toxicomanías": "Toxicomanías"
+		},
+		"AGO": {
+			"Menarca a los 14 años": "Ritmo 30x7 IVSA a los 14 años #PS 5 MPF preservativos PAP: nunca realizado",
+			"Gesta": "6 G1 Aborto espontaneo 2013 G2 Parto 17/04/2014 Peso 3500 gr sin complicaciones. G3 Parto 22/08/2015 Peso 3200 gr sin complicaciones. G4 Parto 11/07/2017 Peso 3000 gr sin 	complicaciones. G5 Aborto espontaneo 2021. G6 FUM 14/11/2021 Control prenatal: 4 consulta, consumió hemátinicos y folatos a partir de 12 SDG, se realizó 2 prueba de VIH y VDRL no reactivo."
+		},
+		"EF": {
+			"Consciente": "Consciente",
+			"Orientedada": "Orientedada",
+			"Cooperadora": "Cooperadora",
+			"Normocefala con adecuada coloración e hidratación de mucosas": "Normocefal
+			}
+		}
+	}
+	
+	
+
+
+
+
+$> Escribe tu prompt: Lista únicamente los valores de las entidades obstétricas del historial de la paciente, agrupa las entidades por embarazos, partos y ultrasonidos, en idioma español y en forma de diccionario de python.
+ ```python
+embarazos = {
+    "17.4 SDG": {
+        "traspolado": True,
+        "placenta_insertion": "corporal posterior",
+        "liquido_amniotico": {
+            "bolsa_mayor": 6.2,
+            "circular_simple": "cordon al cuello"
+        },
+        "peso_fetal": 2758,
+        "ciclo_menstrual": None
+    },
+    "38.4 SDG": {
+        "traspolado": True,
+        "placenta_insertion": None,
+        "liquido_amniotico": None,
+        "peso_fetal": None,
+        "ciclo_menstrual": None
+    },
+    "35.5 SDG": {
+        "traspolado": True,
+        "placenta_insertion": None,
+        "liquido_amniotico": None,
+        "peso_fetal": None,
+        "ciclo_menstrual": None
+    }
+}
+
+partos = {
+    "17/04/2014": {
+        "peso": 3500,
+        "complicaciones": None
+    },
+    "22/08/2015": {
+        "peso": 3200,
+        "complicaciones": None
+    },
+    "11/07/2017": {
+        "peso": 3000,
+        "complicaciones": None
+    }
+}
+
+ultrasonidos = {
+    "30/03/2022": {
+        "embarazo": 17.4,
+        "traspolado": False,
+        "placenta_insertion": None,
+        "liquido_amniotico": None,
+        "peso_fetal": None,
+        "ciclo_menstrual": None
+    },
+    "05/08/2022": {
+        "embarazo": 35.5,
+        "traspolado": False,
+        "placenta_insertion": None,
+        "liquido_amniotico": None,
+        "peso_fetal": None,
+        "ciclo_menstrual": None
+    }
+}
+```
+
+
+Lista todas las entidades clínicas encontradas, sin parafrasear, en idioma español y el resultado debe tener la estructura {"entity":"", "label":"", "start": 0, "end":0}
+
+Lista todas las entidades clínicas encontradas, sin parafrasear, en idioma español y el resultado debe tener la estructura {"entity":"", "label":""}
+
+List all clinical entities founded by their category in the note, without paraphrasing, in Spanish language and the result must have the structure {"": {"entity":"", "label":""}}
+
+
+
+Lista todas los valores de las entidades clínicas obstétricas de la paciente, agrupa por catagoría, sin parafrasear, en idioma español, el resultado con una estructura de diccionario de python 
+
+{
+    "Signos Vitales": {
+        "TAS": 02,
+        "TAD": 74,
+        "TAM": 88,
+        "FC": 81,
+        "FR": 20,
+        "TEMP": 36.2,
+        "SAT": 98
+    },
+    "Exploración Física": {
+        "PESO": 1,
+        "TALLA": 84.6,
+        "IMC": 31.8,
+        "Indice de choque": 0.7,
+        "Gestión": 6,
+        "Embarazo": {
+            "Edad gestional (SDG)": [40.3],
+            "Transplante": False,
+            "Toxicomanías": False,
+            "Alcoholismo": False,
+            "Tabaquismo": False,
+            "Síntomas respiratorios": False,
+            "Síntomas urinarios": False,
+            "Síntomas vaginales": {
+                "Salida de líquido transvaginal": True,
+                "Drenaje de moco con sangre": True
+            },
+            "Placenta": {
+                "Inserción coronal posterior (GRAU II)": True,
+                "Cordón al cuello": False
+            },
+            "Liquido amniótico": {
+                "Bolsa mayor de 6.2 cm": True,
+                "Estimación del peso fetal": [2758],
+                "Circulación sencilla de cordón al cuello": False
+            },
+            "Ultrasonidos": {
+                "Embarazo de 17.4 SDG traspolado a hoy": True,
+                "Embarazo de 38.4 SDG traspolado a hoy": True,
+                "Embarazo de 35.5 SDG traspolado al día de hoy": False
+            },
+        },
+        "Fútbol tercerizado (VIH/VDRL)": [],
+    },
+}
+
+--------------------------------------------------------------------------------------------
+
+{
+    "Signos Vitales": {
+        "TAS": 02,
+        "TAD": 74,
+        "TAM": 88,
+        "FC": 81,
+        "FR": 20,
+        "TEMP": 36.2,
+        "SAT": 98
+    },
+    "Gestión Prenatal": {
+        "Duración del Embarazo (SDG)": [40.3, 37], # SDG referido en las primeras consultas de control prenatal y la última ultrasonografía
+        "Ultrasonidos": [
+            {"Fecha": "30/03/2022", "Embarazo (SDG)": 17.4, "Placenta": "Inserción corporal posterior grado II de granum"},
+            {"Fecha": "05/08/2022", "Embarazo (SDG)": 35.5, "Placenta": "Insertión coronal posterior grado II de granum"}
+        ]
+    },
+    "Liquido Amniótico": {
+        "Bolsa Mayor (cm)": 6.2
+    },
+    "Peso Fetal Estimado": {
+        "Estimación Circular Simple del Cordon al Cuello (g)": 2758
+    }
+}
+
+

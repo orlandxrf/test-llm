@@ -1,0 +1,10 @@
+# python
+*.pyc
+*.pyo
+*.pyd
+
+
+# folders
+__pycache__/
+model/
+data/
